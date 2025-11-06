@@ -164,11 +164,11 @@ For extra safety, run `cleanup.sh` to remove EBS, ELB, and orphaned ENIs.
 
 ## 📘 Learning Outcomes
 
-✅ Implemented the **Observability Triad** — Metrics, Logs, and Traces
-✅ Deployed **Prometheus–Grafana** and **EFK** stack on AWS EKS
-✅ Visualized both sample app (E-commerce) and cluster-level data
-✅ Understood **Jaeger** tracing flow (conceptually)
-✅ Learned resource cleanup and AWS cost optimization
+- ✅ Implemented the **Observability Triad** — Metrics, Logs, and Traces
+- ✅ Deployed **Prometheus–Grafana** and **EFK** stack on AWS EKS
+- ✅ Visualized both sample app (E-commerce) and cluster-level data
+- ✅ Understood **Jaeger** tracing flow (conceptually)
+- ✅ Learned resource cleanup and AWS cost optimization
 
 ---
 
