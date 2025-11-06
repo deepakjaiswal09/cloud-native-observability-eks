@@ -71,21 +71,13 @@ To design and deploy a **complete cloud-native observability system** that provi
    * Preconfigured **E-commerce site dashboard**.
    * Kubernetes **cluster performance metrics** (CPU, memory, pod status, etc.).
 
-#### 🖼️ Screenshots:
-
-- 1. prometheus query
-     <img width="1920" height="1080" alt="prometheus-query" src="https://github.com/user-attachments/assets/c70ab63f-65ef-47af-9b85-f4727bd6fa27" />
-
-- 2. grafana dashboard having nodes info
-     <img width="1920" height="1080" alt="Screenshot (1478)" src="https://github.com/user-attachments/assets/d50594d4-e3d5-483f-a714-473621c55166" />
-     <img width="1920" height="1080" alt="Screenshot (1476)" src="https://github.com/user-attachments/assets/c17b5455-d88c-4d91-95ca-08cf95a723c2" />
-     
-- 3. prometheus services
-     <img width="1920" height="1080" alt="Screenshot (1472)" src="https://github.com/user-attachments/assets/52a315c4-961d-48db-93e6-8ab1ededdcaf" />
-
-- 4. node exporter metrics for prometheus
-     <img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/04e45e1f-fb0a-4b19-b21e-101921524ca1" />
-
+| **#** | **Screenshot**                                                                                              | **Description / Purpose**                                                                          |
+| :---: | :---------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
+|  1️⃣  | ![Node Exporter Metrics](https://github.com/user-attachments/assets/04e45e1f-fb0a-4b19-b21e-101921524ca1)   | Raw metrics from Node Exporter endpoint (`:9100/metrics`) verifying Prometheus scraping.           |
+|  2️⃣  | ![Prometheus Services](https://github.com/user-attachments/assets/52a315c4-961d-48db-93e6-8ab1ededdcaf)     | `kubectl get svc -n monitoring` showing Prometheus, Grafana & Alertmanager LoadBalancer endpoints. |
+|  3️⃣  | ![Prometheus Query](https://github.com/user-attachments/assets/c70ab63f-65ef-47af-9b85-f4727bd6fa27)        | Prometheus UI validating live data via `node_filesystem_readonly` query.                           |
+|  4️⃣  | ![Grafana K8s Dashboard 1](https://github.com/user-attachments/assets/c17b5455-d88c-4d91-95ca-08cf95a723c2) | Grafana dashboard visualizing Kubernetes cluster CPU, memory, and pod stats.                       |
+|  5️⃣  | ![Grafana K8s Dashboard 2](https://github.com/user-attachments/assets/d50594d4-e3d5-483f-a714-473621c55166) | Additional Grafana panel showing node-level metrics and resource usage.                            |
 
 
 ---
@@ -166,7 +158,8 @@ helm install jaeger jaegertracing/jaeger \
 
 | Screenshot                                        | Description                              |
 | ------------------------------------------------- | ---------------------------------------- |
-| ![Jaeger UI Reference](screenshots/jaeger-ui.png) | Example of distributed tracing dashboard |
+| ![Jaeger UI Reference](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/61d2deb6-331c-4084-92c9-285ea3712c9b" />
+) | Example of distributed tracing dashboard |
 
 ---
 
