@@ -115,15 +115,26 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 #### 🖼️ Screenshots:
 
-| Step | Description                                                                                                   | Screenshot                                                                                                                                                  |
-| ---- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1️⃣  | **EFK Stack Deployment**<br>EFK components created successfully using `efk-minimal.yaml`                      | <img width="1920" height="1080" alt="efk-deployment" src="https://github.com/user-attachments/assets/efk-deployment-sample-link" />                         |
-| 2️⃣  | **Kibana Service Verification**<br>LoadBalancer endpoint created for external access                          | <img width="1920" height="1080" alt="kibana-service" src="https://github.com/user-attachments/assets/kibana-service-sample-link" />                         |
-| 3️⃣  | **Kibana Home Page**<br>Kibana UI accessible with modules like Observability, Analytics, and Security         | <img width="1920" height="1080" alt="kibana-home" src="https://github.com/user-attachments/assets/kibana-home-sample-link" />                               |
-| 4️⃣  | **Sample eCommerce Dashboard (Part 1)**<br>Revenue, categories, and regional sales insights from sample data  | <img width="1920" height="1080" alt="kibana-ecommerce-dashboard" src="https://github.com/user-attachments/assets/kibana-ecommerce-dashboard-sample-link" /> |
-| 5️⃣  | **Sample eCommerce Dashboard (Part 2)**<br>Detailed order breakdown and product analytics                     | <img width="1920" height="1080" alt="kibana-ecommerce-metrics" src="https://github.com/user-attachments/assets/kibana-ecommerce-metrics-sample-link" />     |
-| 6️⃣  | **Kibana Discover Logs View**<br>Real-time log ingestion proof from Fluent Bit (`logstash-*` index)           | <img width="1920" height="1080" alt="kibana-discover-logs" src="https://github.com/user-attachments/assets/kibana-discover-logs-sample-link" />             |
-| 7️⃣  | **Kibana Log Visualization Dashboard**<br>Custom charts showing log spike and cumulative log counts over time | <img width="1920" height="1080" alt="kibana-log-dashboard" src="https://github.com/user-attachments/assets/kibana-log-dashboard-sample-link" />             |
+1.Deployed EFK components
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a35a4ad6-6f5f-4ed5-a0d2-77f83c233bb2" />
+
+2.verified kibana load balancer 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a24334a-c57f-4ed9-aa82-c5ec528671a6" />
+
+3.kibana ui access 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/23788c51-945f-4d97-b0cb-29450976ea76" />
+
+4. e-commerce sample dashboard
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acb25f78-aea0-454d-8abd-f05407c69662" />
+
+5. logs of the ecommerce site
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cc269002-6ec6-4462-9f15-ebbb2cc5a189" />
+
+6.my kubernetes fluentbit log dashboard
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7a10f2c8-b1d6-4967-9e49-370320016b58" />
+
+7.visualization of logs 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f78f7511-afbe-46f3-85b3-b32bb7cce58b" />
 
 ---
 
