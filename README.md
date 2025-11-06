@@ -73,12 +73,17 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 #### 🖼️ Screenshots:
 
-| Screenshot                                                                                                       | Description                                |
-| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| ![EKS Cluster](https://github.com/user-attachments/assets/76ee351c-a11f-4c6f-979c-ae3b74b91f9b)                  | EKS Cluster successfully created           |
-| ![Grafana E-commerce Dashboard](https://github.com/user-attachments/assets/633f0c56-ecf4-4c67-ba01-9f853a7cf8c1) | Preconfigured Grafana E-commerce dashboard |
-| ![Grafana Kubernetes Dashboard](screenshots/grafana-k8s-dashboard.png)                                           | Grafana visualizing EKS cluster metrics    |
-| ![Prometheus Targets](screenshots/prometheus-targets.png)                                                        | Prometheus scraping Kubernetes endpoints   |
+* **EKS Cluster Successfully Created**
+  ![EKS Cluster Running](screenshots/eks-cluster.png)
+
+* **Prometheus Target Metrics**
+  ![Prometheus Query](screenshots/prometheus-query.png)
+
+* **Grafana Kubernetes Dashboard**
+  ![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+* **SLA Dashboard (Availability 100%)**
+  ![Grafana SLA Metrics](screenshots/grafana-sla.png)
 
 ---
 
@@ -107,14 +112,18 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 #### 🖼️ Screenshots:
 
-| Screenshot                                                    | Description                                   |
-| ------------------------------------------------------------- | --------------------------------------------- |
-| ![Elasticsearch Health](screenshots/elasticsearch-health.png) | Elasticsearch cluster running (status: green) |
-| ![Kibana Homepage](screenshots/kibana-home.png)               | Kibana UI on browser (LoadBalancer endpoint)  |
-| ![Kibana Index Patterns](screenshots/kibana-index.png)        | Created index pattern for `logstash-*`        |
-| ![Kibana Discover](screenshots/kibana-logs.png)               | Centralized logs streamed from Fluent Bit     |
-| ![CloudShell Logs](screenshots/cloudshell-commands.png)       | CloudShell output validating EFK connectivity |
+* **Fluent Bit Running in Logging Namespace**
+  ![Fluent Bit Pods](screenshots/fluentbit-pods.png)
 
+* **Elasticsearch Cluster Health Check**
+  ![Elasticsearch Health](screenshots/elasticsearch-health.png)
+
+* **Kibana Home Interface**
+  ![Kibana Home](screenshots/kibana-home.png)
+
+* **Kibana Logs for Resume Builder App**
+  ![Kibana Logs](screenshots/kibana-logs.png)
+  
 ---
 
 ### 🔵 **Pillar 3 — Traces (Jaeger - Conceptual Phase)**
@@ -214,5 +223,199 @@ aws-eks-observability-lab/
 *SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps*
 📧 **[deepakjaiswal9238@gmail.com](mailto:deepakjaiswal9238@gmail.com)**
 🔗 [LinkedIn](https://www.linkedin.com/in/deepakjaiswal09/) | [GitHub](https://github.com/deepakjaiswal09)
+
+
+
+
+# 🚀 AWS EKS Observability Stack — Prometheus, Grafana, EFK, and Jaeger (Conceptual)
+
+## 🧩 Problem Statement
+
+A startup runs a **Resume Builder website** that promises **99.99% uptime (SLA)** to customers.
+Recently, users complained about **slow response times and occasional downtime**.
+The DevOps team lacked centralized visibility into **metrics**, **logs**, and **traces**, making it hard to find performance bottlenecks or root causes.
+
+To solve this, we built a **complete Cloud-Native Observability Stack** using **Amazon EKS** that provides full visibility across the system.
+
+---
+
+## 🎯 Objective
+
+To design and deploy an **end-to-end observability solution** on **AWS EKS** that enables:
+
+* Real-time performance monitoring
+* Centralized log collection and analytics
+* Request-level tracing across microservices
+* SLA/SLO compliance visibility
+
+---
+
+## ⚙️ Tech Stack Overview
+
+| Layer                  | Tool                        | Purpose                                  |
+| ---------------------- | --------------------------- | ---------------------------------------- |
+| Metrics                | **Prometheus**              | Collects metrics from cluster components |
+| Visualization          | **Grafana**                 | Displays dashboards and SLO metrics      |
+| Logging                | **Fluent Bit**              | Lightweight log forwarder                |
+| Log Storage            | **Elasticsearch**           | Scalable log indexing and storage        |
+| Log Visualization      | **Kibana**                  | UI to search and analyze logs            |
+| Tracing *(Conceptual)* | **Jaeger**                  | Distributed tracing of requests          |
+| Platform               | **Amazon EKS (Kubernetes)** | Managed Kubernetes control plane         |
+
+---
+
+## 🏗️ Architecture
+
+```
++------------------+         +----------------+
+|   Kubernetes     |         |   AWS EKS      |
+|   (Pods, Apps)   |-------->|  Managed Infra |
++------------------+         +----------------+
+        | Metrics                          | Logs
+        v                                   v
++------------------+              +----------------+
+|   Prometheus     |<------------>|   Fluent Bit    |
+|   (Scraper)      |              | (Log Forwarder) |
++--------+---------+              +--------+--------+
+         |                                  |
+         v                                  v
+  +--------------+                 +------------------+
+  |   Grafana    |                 |   Elasticsearch  |
+  | Dashboards   |                 |   +   Kibana     |
+  +--------------+                 +------------------+
+                 \________________________/
+                      Central Observability
+```
+
+---
+
+## 🧩 Observability Pillars
+
+### 🟢 **1. Metrics — Prometheus & Grafana**
+
+Metrics provide real-time visibility into resource utilization, latency, and uptime.
+
+#### 📍 Steps:
+
+* Installed Prometheus using Helm.
+* Integrated Grafana with Prometheus as a data source.
+* Deployed Node Exporter to collect host-level metrics.
+
+#### 🖼️ Evidence:
+
+* **EKS Cluster Successfully Created**
+  ![EKS Cluster Running](screenshots/eks-cluster.png)
+
+* **Prometheus Target Metrics**
+  ![Prometheus Query](screenshots/prometheus-query.png)
+
+* **Grafana Kubernetes Dashboard**
+  ![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+* **SLA Dashboard (Availability 100%)**
+  ![Grafana SLA Metrics](screenshots/grafana-sla.png)
+
+---
+
+### 🟠 **2. Logs — EFK Stack (Elasticsearch, Fluent Bit, Kibana)**
+
+Logs provide insight into application-level and cluster-level events.
+
+#### 📍 Steps:
+
+* Deployed Elasticsearch and Kibana with Helm.
+* Configured Fluent Bit to ship pod logs to Elasticsearch.
+* Validated health of Elasticsearch cluster.
+* Accessed and explored logs through Kibana’s Discover UI.
+
+#### 🖼️ Evidence:
+
+* **Fluent Bit Running in Logging Namespace**
+  ![Fluent Bit Pods](screenshots/fluentbit-pods.png)
+
+* **Elasticsearch Cluster Health Check**
+  ![Elasticsearch Health](screenshots/elasticsearch-health.png)
+
+* **Kibana Home Interface**
+  ![Kibana Home](screenshots/kibana-home.png)
+
+* **Kibana Logs for Resume Builder App**
+  ![Kibana Logs](screenshots/kibana-logs.png)
+
+---
+
+### 🔵 **3. Traces — Jaeger (Conceptual)**
+
+**Jaeger** is planned for distributed tracing to complete the observability triad.
+It helps trace user requests across microservices to identify latency or dependency failures.
+
+#### 📘 Next Step:
+
+* Deploy **Jaeger Operator** via Helm.
+* Integrate with application services using **OpenTelemetry SDK**.
+
+> You can insert your Jaeger setup screenshot here once ready.
+
+---
+
+## 🧪 Validation and Results
+
+After setup:
+
+* **Prometheus** successfully collected metrics from cluster nodes.
+* **Grafana** visualized system health and availability metrics.
+* **Fluent Bit** forwarded logs to **Elasticsearch**, which were viewed in **Kibana**.
+* Observability data confirmed **100% uptime** of Kubernetes API server, validating SLA compliance.
+
+---
+
+## 🧹 Cleanup
+
+To avoid AWS costs:
+
+```bash
+kubectl delete ns logging monitoring
+eksctl delete cluster --name observability --region us-east-1
+```
+
+All EKS resources, node groups, and load balancers were deleted successfully.
+
+#### 🖼️ Evidence:
+
+![CloudShell Cleanup](screenshots/cleanup.png)
+
+---
+
+## 📘 Learning Outcomes
+
+* Understood **Observability Pillars** (Metrics, Logs, Traces)
+* Deployed **Prometheus–Grafana** and **EFK** stack on AWS EKS
+* Monitored SLA and SLO metrics for real-world applications
+* Learned log indexing and validation using Kibana
+* Automated cleanup using `eksctl` to manage AWS resources
+
+---
+
+## 🚀 Future Enhancements
+
+* Deploy **Jaeger** for tracing
+* Add **Alertmanager** with Slack alerts
+* Automate deployments using **Helm** and **CI/CD**
+* Use **OpenTelemetry** for unified telemetry collection
+
+---
+
+## 👨‍💻 Author
+
+**Deepak Jaiswal**
+SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps
+📧 [deepakjaiswal9238@gmail.com](mailto:deepakjaiswal9238@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/deepakjaiswal09/)
+
+---
+
+> *“Metrics tell you what’s happening, logs tell you why, and traces show you where.”*
+> This project demonstrates all three — built from scratch on AWS EKS.
+
 
 ---
