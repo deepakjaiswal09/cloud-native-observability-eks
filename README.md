@@ -76,7 +76,7 @@ To design and deploy a **complete cloud-native observability system** that provi
 | Screenshot                                                                                                       | Description                                |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | ![EKS Cluster](https://github.com/user-attachments/assets/76ee351c-a11f-4c6f-979c-ae3b74b91f9b)                  | EKS Cluster successfully created           |
-| ![](<img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/ec7f990c-5df8-42e1-9447-63a0824a0b9a" />) | Prometheus metrics on ec2 node |
+| ![Ec2 node](<img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/ec7f990c-5df8-42e1-9447-63a0824a0b9a" />) | Prometheus metrics on ec2 node |
 
 
 
