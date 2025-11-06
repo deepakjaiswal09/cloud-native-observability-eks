@@ -1,0 +1,173 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logging
+---
+# ----------------------- Elasticsearch -----------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+  namespace: logging
+  labels:
+    app: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.17.3
+          ports:
+            - containerPort: 9200
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
+            limits:
+              cpu: 500m
+              memory: 1Gi
+          env:
+            - name: discovery.type
+              value: single-node
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/elasticsearch/data
+      volumes:
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  namespace: logging
+spec:
+  ports:
+    - port: 9200
+      targetPort: 9200
+  selector:
+    app: elasticsearch
+  type: ClusterIP
+---
+# ----------------------- Kibana -----------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana
+  namespace: logging
+  labels:
+    app: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana
+    spec:
+      containers:
+        - name: kibana
+          image: docker.elastic.co/kibana/kibana:7.17.3
+          ports:
+            - containerPort: 5601
+          env:
+            - name: ELASTICSEARCH_HOSTS
+              value: http://elasticsearch:9200
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana
+  namespace: logging
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5601
+      targetPort: 5601
+  selector:
+    app: kibana
+---
+# ----------------------- Fluent Bit -----------------------
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluent-bit
+  namespace: logging
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluent-bit
+  namespace: logging
+  labels:
+    app: fluent-bit
+spec:
+  selector:
+    matchLabels:
+      app: fluent-bit
+  template:
+    metadata:
+      labels:
+        app: fluent-bit
+    spec:
+      serviceAccountName: fluent-bit
+      containers:
+        - name: fluent-bit
+          image: cr.fluentbit.io/fluent/fluent-bit:2.1.8
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 2020
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          volumeMounts:
+            - name: varlog
+              mountPath: /var/log
+            - name: varlibdockercontainers
+              mountPath: /var/lib/docker/containers
+              readOnly: true
+          env:
+            - name: FLUENT_ELASTICSEARCH_HOST
+              value: "elasticsearch"
+            - name: FLUENT_ELASTICSEARCH_PORT
+              value: "9200"
+            - name: FLUENT_ELASTICSEARCH_INDEX
+              value: "kubernetes-logs"
+          command:
+            - /fluent-bit/bin/fluent-bit
+            - -i
+            - tail
+            - -p
+            - path=/var/log/containers/*.log
+            - -p
+            - parser=json
+            - -o
+            - es
+            - -p
+            - Host=elasticsearch
+            - -p
+            - Port=9200
+            - -p
+            - Index=kubernetes-logs
+            - -p
+            - Logstash_Format=On
+      volumes:
+        - name: varlog
+          hostPath:
+            path: /var/log
+        - name: varlibdockercontainers
+          hostPath:
+            path: /var/lib/docker/containers
