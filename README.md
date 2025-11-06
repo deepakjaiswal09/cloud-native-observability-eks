@@ -76,7 +76,11 @@ To design and deploy a **complete cloud-native observability system** that provi
 | Screenshot                                                                                                       | Description                                |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | ![EKS Cluster](https://github.com/user-attachments/assets/76ee351c-a11f-4c6f-979c-ae3b74b91f9b)                  | EKS Cluster successfully created           |
-| ![Grafana E-commerce Dashboard](https://github.com/user-attachments/assets/633f0c56-ecf4-4c67-ba01-9f853a7cf8c1) | Preconfigured Grafana E-commerce dashboard |
+| ![](<img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/ec7f990c-5df8-42e1-9447-63a0824a0b9a" />) | Prometheus metrics on ec2 node |
+
+
+
+
 | ![Grafana Kubernetes Dashboard](screenshots/grafana-k8s-dashboard.png)                                           | Grafana visualizing EKS cluster metrics    |
 | ![Prometheus Targets](screenshots/prometheus-targets.png)                                                        | Prometheus scraping Kubernetes endpoints   |
 
@@ -111,6 +115,7 @@ To design and deploy a **complete cloud-native observability system** that provi
 | ------------------------------------------------------------- | --------------------------------------------- |
 | ![Elasticsearch Health](screenshots/elasticsearch-health.png) | Elasticsearch cluster running (status: green) |
 | ![Kibana Homepage](screenshots/kibana-home.png)               | Kibana UI on browser (LoadBalancer endpoint)  |
+| ![Grafana E-commerce Dashboard](https://github.com/user-attachments/assets/633f0c56-ecf4-4c67-ba01-9f853a7cf8c1) | Preconfigured Grafana E-commerce dashboard |
 | ![Kibana Index Patterns](screenshots/kibana-index.png)        | Created index pattern for `logstash-*`        |
 | ![Kibana Discover](screenshots/kibana-logs.png)               | Centralized logs streamed from Fluent Bit     |
 | ![CloudShell Logs](screenshots/cloudshell-commands.png)       | CloudShell output validating EFK connectivity |
