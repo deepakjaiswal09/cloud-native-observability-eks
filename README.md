@@ -75,12 +75,10 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 | Screenshot                                                                                                       | Description                                |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| ![EKS Cluster](<img width="1920" height="1080" alt="Screenshot (1520)" src="https://github.com/user-attachments/assets/fbf5f9f7-abc4-457d-9f64-43e1c352a53e" />
-)                  | EKS Cluster successfully created           |
-| ![Grafana Kubernetes Dashboard](<img width="1920" height="1080" alt="Screenshot (1478)" src="https://github.com/user-attachments/assets/8fffaa42-ebff-47b0-aa9d-ac646a8f70dd" />
-)                                           | Grafana visualizing EKS cluster metrics    |
-| ![Prometheus Targets](<img width="1920" height="1080" alt="Screenshot (1458)" src="https://github.com/user-attachments/assets/0eb7c83f-f69f-4737-9ab1-066a88e7244c" />
-)                                                        | Prometheus scraping Kubernetes endpoints   |
+| ![EKS Cluster](https://github.com/user-attachments/assets/76ee351c-a11f-4c6f-979c-ae3b74b91f9b)                  | EKS Cluster successfully created           |
+| ![Grafana E-commerce Dashboard](https://github.com/user-attachments/assets/633f0c56-ecf4-4c67-ba01-9f853a7cf8c1) | Preconfigured Grafana E-commerce dashboard |
+| ![Grafana Kubernetes Dashboard](screenshots/grafana-k8s-dashboard.png)                                           | Grafana visualizing EKS cluster metrics    |
+| ![Prometheus Targets](screenshots/prometheus-targets.png)                                                        | Prometheus scraping Kubernetes endpoints   |
 
 ---
 
