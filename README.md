@@ -105,28 +105,15 @@ To design and deploy a **complete cloud-native observability system** that provi
 3. Accessed Kibana via LoadBalancer and created an index pattern `logstash-*`.
 4. Explored log data streamed by Fluent Bit from all cluster pods.
 
-#### 🖼️ Screenshots:
-
-1.Deployed EFK components
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a35a4ad6-6f5f-4ed5-a0d2-77f83c233bb2" />
-
-2.verified kibana load balancer 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a24334a-c57f-4ed9-aa82-c5ec528671a6" />
-
-3.kibana ui access 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/23788c51-945f-4d97-b0cb-29450976ea76" />
-
-4. e-commerce sample dashboard
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acb25f78-aea0-454d-8abd-f05407c69662" />
-
-5. logs of the ecommerce site
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cc269002-6ec6-4462-9f15-ebbb2cc5a189" />
-
-6.my kubernetes fluentbit log dashboard
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7a10f2c8-b1d6-4967-9e49-370320016b58" />
-
-7.visualization of logs 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f78f7511-afbe-46f3-85b3-b32bb7cce58b" />
+| **#** | **Screenshot**                                                                                                   | **Description / Purpose**                                                        |
+| :---: | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
+|  1️⃣  | ![EFK Deployment](https://github.com/user-attachments/assets/a35a4ad6-6f5f-4ed5-a0d2-77f83c233bb2)               | Deployed Elasticsearch, Kibana and Fluent Bit using `efk-minimal.yaml`.          |
+|  2️⃣  | ![Kibana Service](https://github.com/user-attachments/assets/4a24334a-c57f-4ed9-aa82-c5ec528671a6)               | Verified Kibana LoadBalancer endpoint for external access.                       |
+|  3️⃣  | ![Kibana UI Access](https://github.com/user-attachments/assets/23788c51-945f-4d97-b0cb-29450976ea76)             | Successful login to Kibana home screen with Observability and Analytics modules. |
+|  4️⃣  | ![Kibana E-commerce Dashboard](https://github.com/user-attachments/assets/acb25f78-aea0-454d-8abd-f05407c69662)  | Sample E-commerce dashboard to verify visualizations and Elasticsearch queries.  |
+|  5️⃣  | ![E-commerce Logs](https://github.com/user-attachments/assets/cc269002-6ec6-4462-9f15-ebbb2cc5a189)              | Log records from sample E-commerce dataset displayed in Kibana Discover.         |
+|  6️⃣  | ![Fluent Bit K8s Log Dashboard](https://github.com/user-attachments/assets/7a10f2c8-b1d6-4967-9e49-370320016b58) | Custom Kibana dashboard showing Kubernetes logs streamed via Fluent Bit.         |
+|  7️⃣  | ![Log Visualization](https://github.com/user-attachments/assets/f78f7511-afbe-46f3-85b3-b32bb7cce58b)            | Time-series visualization of log volume and document count over time.            |
 
 ---
 
@@ -156,10 +143,9 @@ helm install jaeger jaegertracing/jaeger \
 
 #### 🖼️ Example Reference:
 
-| Screenshot                                        | Description                              |
-| ------------------------------------------------- | ---------------------------------------- |
-| ![Jaeger UI Reference](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/61d2deb6-331c-4084-92c9-285ea3712c9b" />
-) | Example of distributed tracing dashboard |
+| **#** | **Screenshot**                                                                                          | **Description / Purpose**                                                |
+| :---: | :------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------- |
+|  1️⃣  | ![Jaeger UI Reference](https://github.com/user-attachments/assets/61d2deb6-331c-4084-92c9-285ea3712c9b) | Reference UI for Jaeger distributed tracing dashboard (Concept Preview). |
 
 ---
 
