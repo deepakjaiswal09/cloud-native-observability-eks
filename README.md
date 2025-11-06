@@ -77,7 +77,7 @@ To design and deploy a **complete cloud-native observability system** that provi
 |  2️⃣  | ![Prometheus Services](https://github.com/user-attachments/assets/52a315c4-961d-48db-93e6-8ab1ededdcaf)          | `kubectl get svc -n monitoring` showing Prometheus, Grafana & Alertmanager LoadBalancer endpoints. |
 |  3️⃣  | ![Prometheus Query](https://github.com/user-attachments/assets/c70ab63f-65ef-47af-9b85-f4727bd6fa27)             | Prometheus UI validating live data via `node_filesystem_readonly` query.                           |
 |  4️⃣  | ![Grafana K8s Dashboard 1](https://github.com/user-attachments/assets/c17b5455-d88c-4d91-95ca-08cf95a723c2)      | Grafana dashboard visualizing Kubernetes cluster CPU, memory, and pod stats.                       |
-|  5️⃣  | ![Grafana K8s Dashboard 2](https://github.com/user-attachments/assets/d50594d4-e3d5-483f-a714-473621c55166) | Additional Grafana panel showing node-level metrics and resource usage.                            |
+|  5️⃣  | ![Grafana K8s Dashboard 2](https://github.com/user-attachments/assets/d50594d4-e3d5-483f-a714-473621c55166)      | Additional Grafana panel showing node-level metrics and resource usage.                            |
 
 
 ---
@@ -181,38 +181,12 @@ For extra safety, run `cleanup.sh` to remove EBS, ELB, and orphaned ENIs.
 
 ---
 
-## 🧰 Repository Structure
-
-```
-aws-eks-observability-lab/
-├── README.md
-├── manifests/
-│   ├── elasticsearch-deployment.yaml
-│   ├── kibana-deployment.yaml
-│   ├── fluent-bit.yaml
-│   ├── prometheus-values.yaml
-│   ├── grafana-values.yaml
-│   └── namespaces.yaml
-├── screenshots/
-│   ├── eks-cluster.png
-│   ├── grafana-ecommerce.png
-│   ├── grafana-k8s-dashboard.png
-│   ├── elasticsearch-health.png
-│   ├── kibana-logs.png
-│   ├── cloudshell-commands.png
-│   ├── jaeger-ui.png
-│   └── architecture-diagram.png
-├── cleanup.sh
-└── setup-notes.md
-```
-
----
-
 ## 🧑‍💻 Author
 
-**Deepak Jaiswal**
-*SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps*
-📧 **[deepakjaiswal9238@gmail.com](mailto:deepakjaiswal9238@gmail.com)**
-🔗 [LinkedIn](https://www.linkedin.com/in/deepakjaiswal09/) | [GitHub](https://github.com/deepakjaiswal09)
+- **Deepak Jaiswal**
+- *SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps*
+- 📧 **[deepakjaiswal9238@gmail.com](mailto:deepakjaiswal9238@gmail.com)**
+- 🔗 [LinkedIn](https://www.linkedin.com/in/deepakjaiswal09/)
+- [GitHub](https://github.com/deepakjaiswal09)
 
 ---
