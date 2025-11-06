@@ -146,8 +146,8 @@ Optional AWS resource cleanup (EBS, ELB, ENI) → `cleanup.sh`
 ## 🧑‍💻 Author
 
 **Deepak Jaiswal**
-SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps
-📧 deepakjaiswal9238@gmail.com
-🔗 https://www.linkedin.com/in/deepakjaiswal09/
+- SRE Intern (Aspirant) | AWS EKS • Observability • Cloud-Native DevOps
+- 📧 deepakjaiswal9238@gmail.com
+- 🔗 https://www.linkedin.com/in/deepakjaiswal09/
 
 ---
