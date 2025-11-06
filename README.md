@@ -73,16 +73,20 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 #### 🖼️ Screenshots:
 
-| Screenshot                                                                                                       | Description                                |
-| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| ![EKS Cluster](https://github.com/user-attachments/assets/76ee351c-a11f-4c6f-979c-ae3b74b91f9b)                  | EKS Cluster successfully created           |
-| ![Ec2 node](<img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/ec7f990c-5df8-42e1-9447-63a0824a0b9a" />) | Prometheus metrics on ec2 node |
+- 1. prometheus query
+     <img width="1920" height="1080" alt="prometheus-query" src="https://github.com/user-attachments/assets/c70ab63f-65ef-47af-9b85-f4727bd6fa27" />
+
+- 2. grafana dashboard having nodes info
+     <img width="1920" height="1080" alt="Screenshot (1478)" src="https://github.com/user-attachments/assets/d50594d4-e3d5-483f-a714-473621c55166" />
+     <img width="1920" height="1080" alt="Screenshot (1476)" src="https://github.com/user-attachments/assets/c17b5455-d88c-4d91-95ca-08cf95a723c2" />
+     
+- 3. prometheus services
+     <img width="1920" height="1080" alt="Screenshot (1472)" src="https://github.com/user-attachments/assets/52a315c4-961d-48db-93e6-8ab1ededdcaf" />
+
+- 4. node exporter metrics for prometheus
+     <img width="1920" height="1080" alt="Screenshot (1460)" src="https://github.com/user-attachments/assets/04e45e1f-fb0a-4b19-b21e-101921524ca1" />
 
 
-
-
-| ![Grafana Kubernetes Dashboard](screenshots/grafana-k8s-dashboard.png)                                           | Grafana visualizing EKS cluster metrics    |
-| ![Prometheus Targets](screenshots/prometheus-targets.png)                                                        | Prometheus scraping Kubernetes endpoints   |
 
 ---
 
@@ -111,14 +115,15 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 #### 🖼️ Screenshots:
 
-| Screenshot                                                    | Description                                   |
-| ------------------------------------------------------------- | --------------------------------------------- |
-| ![Elasticsearch Health](screenshots/elasticsearch-health.png) | Elasticsearch cluster running (status: green) |
-| ![Kibana Homepage](screenshots/kibana-home.png)               | Kibana UI on browser (LoadBalancer endpoint)  |
-| ![Grafana E-commerce Dashboard](https://github.com/user-attachments/assets/633f0c56-ecf4-4c67-ba01-9f853a7cf8c1) | Preconfigured Grafana E-commerce dashboard |
-| ![Kibana Index Patterns](screenshots/kibana-index.png)        | Created index pattern for `logstash-*`        |
-| ![Kibana Discover](screenshots/kibana-logs.png)               | Centralized logs streamed from Fluent Bit     |
-| ![CloudShell Logs](screenshots/cloudshell-commands.png)       | CloudShell output validating EFK connectivity |
+| Step | Description                                                                                                   | Screenshot                                                                                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1️⃣  | **EFK Stack Deployment**<br>EFK components created successfully using `efk-minimal.yaml`                      | <img width="1920" height="1080" alt="efk-deployment" src="https://github.com/user-attachments/assets/efk-deployment-sample-link" />                         |
+| 2️⃣  | **Kibana Service Verification**<br>LoadBalancer endpoint created for external access                          | <img width="1920" height="1080" alt="kibana-service" src="https://github.com/user-attachments/assets/kibana-service-sample-link" />                         |
+| 3️⃣  | **Kibana Home Page**<br>Kibana UI accessible with modules like Observability, Analytics, and Security         | <img width="1920" height="1080" alt="kibana-home" src="https://github.com/user-attachments/assets/kibana-home-sample-link" />                               |
+| 4️⃣  | **Sample eCommerce Dashboard (Part 1)**<br>Revenue, categories, and regional sales insights from sample data  | <img width="1920" height="1080" alt="kibana-ecommerce-dashboard" src="https://github.com/user-attachments/assets/kibana-ecommerce-dashboard-sample-link" /> |
+| 5️⃣  | **Sample eCommerce Dashboard (Part 2)**<br>Detailed order breakdown and product analytics                     | <img width="1920" height="1080" alt="kibana-ecommerce-metrics" src="https://github.com/user-attachments/assets/kibana-ecommerce-metrics-sample-link" />     |
+| 6️⃣  | **Kibana Discover Logs View**<br>Real-time log ingestion proof from Fluent Bit (`logstash-*` index)           | <img width="1920" height="1080" alt="kibana-discover-logs" src="https://github.com/user-attachments/assets/kibana-discover-logs-sample-link" />             |
+| 7️⃣  | **Kibana Log Visualization Dashboard**<br>Custom charts showing log spike and cumulative log counts over time | <img width="1920" height="1080" alt="kibana-log-dashboard" src="https://github.com/user-attachments/assets/kibana-log-dashboard-sample-link" />             |
 
 ---
 
