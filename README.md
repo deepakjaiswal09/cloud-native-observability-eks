@@ -37,6 +37,8 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 ## 🏗️ Architecture
 
+![1764236331068_page-0001](https://github.com/user-attachments/assets/0b45eb4a-c821-4eee-9a00-b2857c9b97d7)
+
 ![Architecture Diagram](https://github.com/user-attachments/assets/31d7c04e-cd8f-4394-9af2-5cddb9e7b6b4)
 
 **Flow:**
