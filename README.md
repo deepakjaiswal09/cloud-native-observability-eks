@@ -39,8 +39,6 @@ To design and deploy a **complete cloud-native observability system** that provi
 
 ![1764236331068_page-0001](https://github.com/user-attachments/assets/0b45eb4a-c821-4eee-9a00-b2857c9b97d7)
 
-![Architecture Diagram](https://github.com/user-attachments/assets/31d7c04e-cd8f-4394-9af2-5cddb9e7b6b4)
-
 **Flow:**
 
 1. Applications generate logs and metrics.
@@ -150,6 +148,10 @@ helm install jaeger jaegertracing/jaeger \
 |  1️⃣  | ![Jaeger UI Reference](https://github.com/user-attachments/assets/61d2deb6-331c-4084-92c9-285ea3712c9b) | Reference UI for Jaeger distributed tracing dashboard (Concept Preview). |
 
 ---
+
+## More Simple Architecture 
+
+![Architecture Diagram](https://github.com/user-attachments/assets/31d7c04e-cd8f-4394-9af2-5cddb9e7b6b4)
 
 ## 🧹 Cleanup
 
